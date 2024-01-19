@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
+import HigherorderCounter from './counter'
+ function LikeImage(props) {
 
-export default function LikeImage() {
-
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
-
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
+  const count=props.count;
+  const increment=props.increment
 
   return (
     <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
+      <button onClick={increment}>Like Image {count}</button>
     </div>
   )
 }
+export default HigherorderCounter(LikeImage)
